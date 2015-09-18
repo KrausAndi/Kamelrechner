@@ -1,1 +1,4 @@
-# Empty CSS file for your own CSS
+.titlearea{
+	text-align: center;
+	display: flex;
+}
