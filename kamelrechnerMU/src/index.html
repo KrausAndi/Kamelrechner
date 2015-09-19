@@ -9,80 +9,80 @@
 
     <meta name="description" content="Kamelrechner">
     <meta name="author" content="Kamelrechner">
-
+    <link rel="shortcut icon" type="image/x-icon" href="./img/favicon.png">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+	
 
   </head>
   <body>
 
     <div class="container-fluid">
-	<div class="row">
+	<div class="row content">
 		<div class="col-md-12">
 			<div class="row">
-				<div class="col-md-12 titlearea">
-					<div class="col-md-2">
-						<img class=" img-responsive" src="./img/camel80.png">
+				<div class="col-md-2 col-md-offset-10 lang-select">
+						<img class=" img-responsive" src="./img/camel80brit.png" title="I speak english">
+						<img class=" img-responsive" src="./img/camel80deut.png" title="Ich spreche deutsch">
 					</div>
-					<div class="col-md-8 text-center">
+				<div class="col-md-12 titlearea">
+					
+					<div class="col-md-2">
+					</div>
+					<div class="col-md-8 text-center title">
 						<h2>Wieviele Kamele ist Dein Freund wert?</h2>
 					</div>
 					<div class="col-md-2">
-						<img class=" img-responsive" src="./img/camel80.png">
 					</div>
 				</div>
+				<div class="row"><div class="col-md-12"><div id="camels"></div></div>
 			</div>
-			<div class="row">
+			<div class="row con-row">
+				<div class="col-md-2 visible-md visible-lg">
+					
+				</div>
+				<div class="col-md-2">
+					<h4>Name</h4>
+				</div>
+				<div class="col-md-6 con">
+					<input type="text" name="name"  value="" class="name" placeholder="Name Deines Freundes">
+				</div>
+				<div class="col-md-2 visible-md visible-lg">
+					
+				</div>
+			</div>
+			<div class="row con-row">
 				<div class="col-md-2 visible-md visible-lg">
 					
 				</div>
 				<div class="col-md-2">
 					<h4>Alter</h4>
 				</div>
-				<div class="col-md-6">
-					<div class="row">
-						<div class="col-md-3">
-						</div>
-						<div class="col-md-3">
-						</div>
-						<div class="col-md-3">
-						</div>
-						<div class="col-md-3">
-						</div>
-					</div>
+				<div class="col-md-6 con">
+					<div class="ageval rangeval age">50</div>
+					<input type="range" name="age" min="1" max="99" value="50" class="agerange">
 				</div>
 				<div class="col-md-2 visible-md visible-lg">
 					
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-md-12">
-				</div>
-			</div>
-			<div class="row">
+			
+			<div class="row con-row">
 				<div class="col-md-2 visible-md visible-lg">
 					
 				</div>
 				<div class="col-md-2">
 					<h4>Größe</h4>
 				</div>
-				<div class="col-md-6">
-					<div class="row">
-						<div class="col-md-3">
-						</div>
-						<div class="col-md-3">
-						</div>
-						<div class="col-md-3">
-						</div>
-						<div class="col-md-3">
-						</div>
-					</div>
+				<div class="col-md-6 con">
+						<div class="heightval rangeval height">150</div>
+						<input type="range" name="height" min="50" max="230" value="150" class="heightrange">
 				</div>
 				<div class="col-md-2 visible-md visible-lg">
 					
 				</div>
 			</div>
-			<div class="row">
+			<div class="row con-row">
 				<div class="col-md-2 visible-md visible-lg">
 					
 				</div>
@@ -90,25 +90,32 @@
 					<h4>Haarfarbe</h4>
 				</div>
 				<div class="col-md-6">
-					<div class="btn-group">
+					<div class="btn-group con haircon">
 						 
-						<button class="btn btn-default">
-							Action
+						<button class="btn btn-warning haircolor">
+							Haarfarbe auswählen
 						</button> 
 						<button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
 							<span class="caret"></span>
 						</button>
-						<ul class="dropdown-menu">
-							<li>
-								<a href="#">Action</a>
+						<ul class="dropdown-menu hairdrop">
+							<li value="8">
+								<a href="#">braun</a>
 							</li>
-							<li class="disabled">
-								<a href="#">Another action</a>
+							<li value="8">
+								<a href="#">blond</a>
 							</li>
-							<li class="divider">
+							<li value="8">
+								<a href="#">schwarz</a>
 							</li>
-							<li>
-								<a href="#">Something else here</a>
+							<li value="5">
+								<a href="#">rot</a>
+							</li>
+							<li value="4">
+								<a href="#">grau</a>
+							</li>
+							<li value="3">
+								<a href="#">andere Farbe</a>
 							</li>
 						</ul>
 					</div>
@@ -117,20 +124,24 @@
 					
 				</div>
 			</div>
-			<div class="row">
+			<div class="row con-row">
 				<div class="col-md-2 visible-md visible-lg">
 					
 				</div>
 				<div class="col-md-2">
 					<h4>Haarlänge</h4>
 				</div>
-				<div class="col-md-6">
+				<div class="col-md-6 hairlength haircon con">
+					<div class="col-md-3 image" value="2"><img class="img-responsive" src="./img/camel_skin.png">keine</div>
+					<div class="col-md-3 image" value="3"><img class="img-responsive" src="./img/camel_short.png">kurz</div>
+					<div class="col-md-3 image" value="4"><img class="img-responsive" src="./img/camel_mid.png">mittel</div>
+					<div class="col-md-3 image" value="3"><img class="img-responsive" src="./img/camel_long.png">lang</div>
 				</div>
 				<div class="col-md-2 visible-md visible-lg">
 					
 				</div>
 			</div>
-			<div class="row">
+			<div class="row con-row">
 				<div class="col-md-2 visible-md visible-lg">
 					
 				</div>
@@ -138,41 +149,62 @@
 					<h4>Augenfarbe</h4>
 				</div>
 				<div class="col-md-6">
+					<div class="btn-group eyecolor con" role="group" aria-label="...">
+					  <button type="button" class="btn btn-lg btn-primary">blau</button>
+					  <button type="button" class="btn btn-lg btn-success">grün</button>
+					  <button type="button" class="btn btn-lg btn-default brown">braun</button>
+					  <button type="button" class="btn btn-lg btn-default grey">grau</button>
+					</div>
 				</div>
 				<div class="col-md-2 visible-md visible-lg">
 					
 				</div>
 			</div>
-			<div class="row">
+			<div class="row con-row">
 				<div class="col-md-2 visible-md visible-lg">
 					
 				</div>
 				<div class="col-md-2">
 					<h4>Bart</h4>
 				</div>
-				<div class="col-md-6">
+				<div class="col-md-6 con haircon hairlength">
+					<div class="col-md-3 image" value="2"><img class="img-responsive" src="./img/camel_skin.png"></div>
+					<div class="col-md-3 image" value="3"><img class="img-responsive" src="./img/camel_stout.png"></div>
+					<div class="col-md-3 image" value="4"><img class="img-responsive" src="./img/camel_half.png"></div>
+					<div class="col-md-3 image" value="3"><img class="img-responsive" src="./img/camel_fullb.png"></div>
 				</div>
 				<div class="col-md-2 visible-md visible-lg">
 					
 				</div>
 			</div>
-			<div class="row">
+			<div class="row con-row">
 				<div class="col-md-2 visible-md visible-lg">
 					
 				</div>
 				<div class="col-md-2">
 					<h4>Oberkörper</h4>
 				</div>
-				<div class="col-md-6">
+				<div class="col-md-6 con haircon hairlength">
+					<div class="col-md-3 image" value="3"><img class="img-responsive" src="./img/camel_slim.png">mager
+					</div>
+					<div class="col-md-3 image" value="3"><img class="img-responsive" src="./img/camel_middle.png">normal
+					</div>
+					<div class="col-md-3 image" value="3"><img class="img-responsive" src="./img/camel_fat.png">dick
+					</div>
+					<div class="col-md-3 image" value="3"><img class="img-responsive" src="./img/camel_muscle.png">muskulös
+					</div>
+					
 				</div>
+			
 				<div class="col-md-2 visible-md visible-lg">
+
 					
 				</div>
 			</div>
 			<div class="row">
 				
 				<div class="col-md-12 text-center">
-					<div type="button"class="btn btn-warning btn-lg ">BERECHNEN</div>
+					<div type="button"class="btn btn-warning btn-lg sumup"><a href="sumup.html">BERECHNEN</a></div>
 				</div>
 			</div>
 		</div>

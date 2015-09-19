@@ -1,4 +1,234 @@
+
+.con-row{
+	margin-bottom:30px;
+}
+
 .titlearea{
 	text-align: center;
+    display: flex;
+    background: url(../img/wueste-titel.png);
+    background-size: cover;
+    height: 200px;
+    position: relative;
+    top:-40px;
+}
+.title{
+	z-index: 1;
+	top:60px;
+}
+.title>h2{
+	text-align: center;
+	color: white;
+}
+.content{
+	background: white;
+	background-position: 0 200px;
+	background-size: cover;
+}
+.lang-select{
 	display: flex;
+    cursor: pointer;
+    top: 30px;
+    z-index: 1;
+}
+.lang-select>img{
+	height: 40px;
+	width: auto;
+
+}
+@-webkit-keyframes slide {
+  from{
+      background-position:1725px;
+  }
+  to{
+      background-position:575px;
+  }
+}
+@-moz-keyframes slide {
+  from{
+      background-position:1725px;
+  }
+  to{
+      background-position:575px;
+  }
+}
+
+
+#camels{
+  width:100%;
+  height:80px;
+  background:url(../img/camels.png);
+  -webkit-animation: slide 60s linear infinite;
+  -moz-animation: slide 60s linear infinite;
+  position: relative;
+  top:-120px;
+  margin-bottom: -80px;
+
+}
+.name{
+	height: 40px;
+    line-height: 40px;
+    position: relative;
+    top: 3px;
+    width: 98%;
+    border-radius: 4px;
+}
+.name:hover, .name:active, .name:focus{
+	border: 4px solid #eea236;
+}
+/* Range-Styles */
+.con{
+	display: flex;
+    position: relative;
+    z-index: 999;
+}
+.range{
+	position: relative;
+	top:14px;
+	z-index: 9;
+	width: 80%
+}
+.rangeval{
+    background: url(../img/camel80.png);
+    background-size: cover;
+    height: 53px;
+    width: 60px;
+    color: #ffffff;
+    font-weight: bold;
+    line-height: 52px;
+    text-align: center;
+    background-repeat: no-repeat;
+    z-index: 9;
+}
+
+input[type=range]{
+    -webkit-appearance: none;
+    -moz--appearance: none;
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 300px;
+    height: 5px;
+    background: #ddd;
+    border: none;
+    border-radius: 3px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background: url(../img/camel80.png);
+    margin-top: -20px;
+    background-size: contain;
+
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #ccc;
+}
+
+input[type=range]::-moz-range-track {
+    width: 90%;
+    height: 5px;
+    background: #ddd;
+    border: none;
+    border-radius: 3px;
+}
+
+input[type=range]::-moz-range-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background: url(../img/camel80.png);
+    margin-top: -20px;
+    background-size: contain;
+
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+input[type=range]:hover {
+    outline: none;
+}
+input[type=range]:active {
+    outline: none;
+}
+
+input[type=range]:focus::-moz-range-track {
+    background: #ccc;
+}
+/* end Range-Styles */
+/* Dropdown-Styles */
+
+.haircolor{
+	width: 100%; 
+}
+.haircon{
+	margin-top: 10px;
+	text-align: center;
+}
+.haircon>img{
+	width: 100%;
+	height: auto;
+}
+.hairlength{
+	z-index: 0;
+}
+.haircon>ul>li{
+	z-index: 9999;
+	position: relative;
+	width: 100%;
+
+}
+.hairdrop{
+	width:100%;
+	background-color: #EC971F;
+	color: #ffffff;
+	border: 1px solid white;
+}
+.haircon>ul{
+	z-index: 9999;
+	width: 100%;
+
+}
+.image:hover, .image:active, .image:focus{
+    border: 4px solid #eea236;
+    border-radius: 5px;
+}
+/* end Dropdown-Styles */
+/* Eye-Button-Styles */
+.brown{
+	background: #A36611;
+}
+.sumup{
+	margin: 30px auto 30px auto;
+	width: 66.67%;
+}
+.brown:hover, .brown:active, .brown:focus{
+	background: #966512;
+}
+.grey{
+	background: lightgrey;
+}
+.grey:hover, .grey:active, .grey:focus{
+	background: grey;
+}
+.eyecolor>button{
+	width:100%;
+}
+/* end Eye-Button-Styles */
+.sumup>a{
+	color: #ffffff;
+	text-decoration: none;
 }
