@@ -202,9 +202,10 @@ input[type=range]:focus::-moz-range-track {
 	width: 100%;
 
 }
-.image:hover, .image:active, .image:focus{
+.image:hover, .image:active, .image:focus, .image:target{
     border: 4px solid #eea236;
     border-radius: 5px;
+    cursor: pointer;
 }
 /* end Dropdown-Styles */
 /* Eye-Button-Styles */
@@ -215,14 +216,21 @@ input[type=range]:focus::-moz-range-track {
 	margin: 30px auto 30px auto;
 	width: 66.67%;
 }
-.brown:hover, .brown:active, .brown:focus{
-	background: #966512;
+.brown:hover, .brown:active, .brown:focus, .brown:target{
+	background: #684107;
+	border: 3px solid #eea236;
+	border-radius: 4px;
 }
 .grey{
 	background: lightgrey;
 }
 .grey:hover, .grey:active, .grey:focus{
 	background: grey;
+
+}
+button:hover, button:active, button:focus, button:target{
+	border: 3px solid #eea236;
+	border-radius: 4px;
 }
 .eyecolor>button{
 	width:100%;
@@ -231,4 +239,8 @@ input[type=range]:focus::-moz-range-track {
 .sumup>a{
 	color: #ffffff;
 	text-decoration: none;
+}
+.active{
+	border: 4px solid #eea236;
+    border-radius: 4px;
 }

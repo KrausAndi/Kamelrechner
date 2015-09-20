@@ -20,5 +20,9 @@ $(document).ready(function(){
     e.preventDefault();
     return false;
 });
+	$('.cli').on('click', function(){
+		$(this).toggleClass('active');
+		return false;
+	})
 
 })
