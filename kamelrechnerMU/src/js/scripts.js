@@ -1,4 +1,10 @@
 $(document).ready(function(){
+	$('.speakenglish').on('click', function(){
+		$('.engl, .ger').toggleClass('hidden');
+		
+
+	})
+
 	$('.agerange').on('change', function(){
 
 		var hisage = $(this).val();
@@ -19,10 +25,20 @@ $(document).ready(function(){
     $div.removeClass('open');
     e.preventDefault();
     return false;
-});
+	});
 	$('.cli').on('click', function(){
-		$(this).toggleClass('active');
+		$(this).siblings('.cli').removeClass('active');
+		$(this).addClass('active');
 		return false;
 	})
+	$('.sumup').on('click', function(){
+
+		var sum = [];
+
+
+		$('.hidethis').addClass('hidden');
+
+	})
+
 
 })
