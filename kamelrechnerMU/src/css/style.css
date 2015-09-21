@@ -226,7 +226,7 @@ input[type=range]:focus::-moz-range-track {
 }
 .sumup{
 	margin: 30px auto 30px auto;
-	width: 66.67%;
+	width: 33.3334%;
 }
 .brown:hover, .brown:active, .brown:focus, .brown:target{
 	background: #684107;
@@ -285,7 +285,10 @@ button:hover, button:active, button:focus, button:target{
 @media only screen and (max-width : 768px) {
        .fb{
           width: 60%;
-          
+        }
+        .sumup{
+          margin: 30px auto 30px auto;
+          width: 80%;
         }
     }
      
@@ -299,4 +302,11 @@ button:hover, button:active, button:focus, button:target{
     width: 200px;
     height: 200px;
     line-height: 152px;
+}
+.orange{
+  background-color: #eea236;
+}
+.retry{
+  position: relative;
+  top: -72px;
 }

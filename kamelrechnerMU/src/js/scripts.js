@@ -20,6 +20,7 @@ $(document).ready(function(){
 	$('input[type=range]').on('input', function () {
     $(this).trigger('change');
 	});
+	//end get ranges
 
 	//dropdown to button
 	$('div.btn-group ul.dropdown-menu li a').click(function (e) {
@@ -30,6 +31,7 @@ $(document).ready(function(){
     e.preventDefault();
     return false;
 	});
+	//end dropdown to button
 
 	//chose element on page
 	$('.cli').on('click', function(){
@@ -41,10 +43,13 @@ $(document).ready(function(){
 	$(".dropdown-menu").find('.sum').click(function() {
          value = $(this).parent('li').data('value');
     });
+	//end chose element on page
 
 	//calculate and display camels
 	$('.sumup').on('click', function(){
+		//Validierung
 
+		//end Validierung
 		var sum = [];
 		var sumit;
 		var txtit;
@@ -102,4 +107,6 @@ $(document).ready(function(){
 	})
 })
 
-
+$(document).on("click", ".retry", function(){
+          location.reload(true);
+});
