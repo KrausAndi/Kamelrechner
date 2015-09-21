@@ -1,23 +1,27 @@
 $(document).ready(function(){
+	//language selection
 	$('.speakenglish').on('click', function(){
 		$('.engl, .ger').toggleClass('hidden');
-		
-
 	})
-
+	var hisage;
+	var hisheight
+	var agepoints;
+	var value;
+	// get ranges
 	$('.agerange').on('change', function(){
 
-		var hisage = $(this).val();
+		hisage = $(this).val();
 		$('.ageval').text(hisage);
 	})
 	$('.heightrange').on('change', function(){
-		var hisheight = $(this).val();
+		hisheight = $(this).val();
 		$('.heightval').text(hisheight);
 	})
 	$('input[type=range]').on('input', function () {
     $(this).trigger('change');
 	});
 
+	//dropdown to button
 	$('div.btn-group ul.dropdown-menu li a').click(function (e) {
     var $div = $(this).parent().parent().parent(); 
     var $btn = $div.find('.haircolor');
@@ -26,19 +30,76 @@ $(document).ready(function(){
     e.preventDefault();
     return false;
 	});
+
+	//chose element on page
 	$('.cli').on('click', function(){
 		$(this).siblings('.cli').removeClass('active');
 		$(this).addClass('active');
 		return false;
 	})
+
+	$(".dropdown-menu").find('.sum').click(function() {
+         value = $(this).parent('li').data('value');
+    });
+
+	//calculate and display camels
 	$('.sumup').on('click', function(){
 
 		var sum = [];
+		var sumit;
+		var txtit;
+		var total = 0;
 
+		if(hisage>40){
+			agepoints = 5;
+		}else if(hisage>30){
+			agepoints = 15;
+		}
+		else if(hisage>20){
+			agepoints = 20;
+		}else {
+			agepoints = 25;
+		}
+		
+		sum.push(hisheight/9, agepoints, value);
+		
+		$('.active').each(function(){
+			
+			sumit = $(this).data('value');
+			
+			sum.push(sumit);
+			
+
+		})
 
 		$('.hidethis').addClass('hidden');
+		$('.showthis').removeClass('hidden');
+		var zws = [];
+		for(var i=0;i<sum.length;i++){
+			 zws.push(parseInt(sum[i]));
+			}
+		
+		for(var i=0;i<zws.length;i++){
+			total += zws[i]<< 0;
+		}
+		
+			var t=0;
+			function next() {
+					setTimeout(function() {
+			            if (t == total + 1) {
+			                return;
+			            }
 
+			            // Do what you need to do 
+			            $('.camelcount').text(t);
+			            t++;
+			            
+			            next();
+			        }, 50);
+
+			}	
+			next();
 	})
-
-
 })
+
+
