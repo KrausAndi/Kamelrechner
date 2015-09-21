@@ -79,6 +79,8 @@ $(document).ready(function(){
 
 		$('.hidethis').addClass('hidden');
 		$('.showthis').removeClass('hidden');
+		$('.showthis').find('.rthidden').addClass('hidden');
+		
 		var zws = [];
 		for(var i=0;i<sum.length;i++){
 			 zws.push(parseInt(sum[i]));
