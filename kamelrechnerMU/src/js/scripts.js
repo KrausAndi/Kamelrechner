@@ -7,7 +7,7 @@ $(document).ready(function(){
 	var agepoints;
 	var value;
 	var t=0;
-	var countEntrys;
+	
 
 	/**** end Variables ****/
 
@@ -46,48 +46,51 @@ $(document).ready(function(){
 		var txtit;
 		var total = 0;
 
-
 		//Validierung
-		validateEntrys(countEntrys);
-		//end Validierung
-		//agepoints
-		if(hisage>40){
-			agepoints = 5;
-		}else if(hisage>30){
-			agepoints = 15;
-		}
-		else if(hisage>20){
-			agepoints = 20;
-		}else {
-			agepoints = 25;
-		}
-		//agepoints
-		sum.push(hisheight/9, agepoints, value);
+		var countEntrys = validateEntrys();
 		
-		$('.active').each(function(){
-			
-			sumit = $(this).data('value');
-			
-			sum.push(sumit);
-			
-
-		})
-
-		$('.hidethis').addClass('hidden');
-		$('.showthis').removeClass('hidden');
-
-		var zws = [];
-		for(var i=0;i<sum.length;i++){
-			 zws.push(parseInt(sum[i]));
+		if(countEntrys<6){
+			$(".validate-popup").removeClass('validatehidden');
+		}
+		else{
+		
+			if(hisage>40){
+				agepoints = 5;
+			}else if(hisage>30){
+				agepoints = 15;
 			}
-		
-		for(var i=0;i<zws.length;i++){
-			total += zws[i]<< 0;
-		}
-		
+			else if(hisage>20){
+				agepoints = 20;
+			}else {
+				agepoints = 25;
+			}
+			//agepoints
+			sum.push(hisheight/9, agepoints, value);
 			
-		
+			$('.active').each(function(){
+				
+				sumit = $(this).data('value');
+				
+				sum.push(sumit);
+				
+
+			})
+
+			$('.hidethis').addClass('hidden');
+			$('.showthis').removeClass('hidden');
+
+			var zws = [];
+			for(var i=0;i<sum.length;i++){
+				 zws.push(parseInt(sum[i]));
+				}
+			
+			for(var i=0;i<zws.length;i++){
+				total += zws[i]<< 0;
+			}
+			
+				
 			nextCamel(t, total);
+		}
 			
 	})
 
@@ -111,14 +114,14 @@ function nextCamel(t, total) {
 }
 //end Count up camels//
 //validate
-function validateEntrys(countEntrys){
-	countEntrys = 0;
+function validateEntrys(){
+	var countEntrys = 0;
+
 	$('.active').each(function(){
 		countEntrys++;
 	})
-	if(countEntrys<6){
-		$(".validate-popup").removeClass('validatehidden');
-	}
+	
+	return countEntrys;
 }
 $(document).on("click", ".abort", function(){
           $(".validate-popup").addClass('validatehidden');

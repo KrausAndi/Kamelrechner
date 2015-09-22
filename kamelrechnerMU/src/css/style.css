@@ -1,3 +1,4 @@
+
 .langhidden, .validatehidden{
   display: none!important;
 }
@@ -247,7 +248,7 @@ input[type=range]:focus::-moz-range-track {
 
 }
 button:hover, button:active, button:focus, button:target{
-	border: 3px solid #eea236!important;
+	border: 3px solid #eea236;
 	border-radius: 4px;
 }
 .eyecolor>button{
@@ -322,13 +323,14 @@ button:hover, button:active, button:focus, button:target{
 }
 .validate-popup{
   position: fixed;
-  top:20%;
-  height: 80%;
-  width: 64%;
-  left: 16%;
+  top: 30%;
+  left: 35%;
+  height: 40%;
+  width: 30%;
+ 
   z-index: 100000;
   border: 4px solid #F7A031;
   background: lightgrey;
   color: white;
-  font-size: 2em;
+  font-size: 1.2em;
 }
