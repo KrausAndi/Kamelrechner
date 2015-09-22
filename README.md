@@ -6,5 +6,5 @@ Kamelrechner Andreas Kraus
 Zeile 253   facebook.com/sharer/sharer.php?u=DER KAMELRECHNER/index.html
 
 - Die Seite ist nur mit  FF 40.0.3 und Chrome 45.0.2454.93 (64-bit) getestet. 
-- Ich habe noch eine "Softvalidierung" eingebaut.
+- Ich habe noch eine ganz einfache Validierung eingebaut.
 
