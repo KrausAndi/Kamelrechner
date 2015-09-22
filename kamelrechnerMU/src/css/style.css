@@ -248,7 +248,7 @@ input[type=range]:focus::-moz-range-track {
 
 }
 button:hover, button:active, button:focus, button:target{
-	border: 3px solid #eea236;
+	border: 3px solid #eea236!important;
 	border-radius: 4px;
 }
 .eyecolor>button{
