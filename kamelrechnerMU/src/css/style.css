@@ -1,4 +1,8 @@
 
+.langhidden, .validatehidden{
+  display: none!important;
+}
+
 .con-row{
 	margin-bottom:30px;
 }
@@ -214,6 +218,9 @@ input[type=range]:focus::-moz-range-track {
 	width: 100%;
 
 }
+.eyecolor{
+  z-index: 997;
+}
 .image:hover, .image:active, .image:focus, .image:target{
     border: 4px solid #eea236;
     border-radius: 5px;
@@ -309,4 +316,16 @@ button:hover, button:active, button:focus, button:target{
 .retry{
   position: relative;
   top: -72px;
+}
+.validate-popup{
+  position: fixed;
+  top:20%;
+  height: 80%;
+  width: 64%;
+  left: 16%;
+  z-index: 100000;
+  border: 4px solid #eea236;
+  background: lightgrey;
+  color: white;
+  font-size: 2em;
 }

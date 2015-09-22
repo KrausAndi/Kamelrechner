@@ -1,4 +1,3 @@
-//document ready
 $(document).ready(function(){
 	/**** Variables ****/
 
@@ -6,11 +5,14 @@ $(document).ready(function(){
 	var hisheight
 	var agepoints;
 	var value;
-	var t=0;
-	var countEntrys;
 
 	/**** end Variables ****/
 
+	//language selection
+	$('.speakenglish').on('click', function(){
+		$('.engl, .ger').toggleClass('hidden');
+	})
+	
 	// get ranges
 	$('.agerange').on('change', function(){
 
@@ -26,7 +28,17 @@ $(document).ready(function(){
 	});
 	//end get ranges
 
-	
+	//dropdown to button
+	$('div.btn-group ul.dropdown-menu li a').click(function (e) {
+    var $div = $(this).parent().parent().parent(); 
+    var $btn = $div.find('.haircolor');
+    $btn.html($(this).text());
+    $div.removeClass('open');
+    e.preventDefault();
+    return false;
+	});
+	//end dropdown to button
+
 	//chose element on page
 	$('.cli').on('click', function(){
 		$(this).siblings('.cli').removeClass('active');
@@ -41,16 +53,14 @@ $(document).ready(function(){
 
 	//calculate and display camels
 	$('.sumup').on('click', function(){
+		//Validierung
+
+		//end Validierung
 		var sum = [];
 		var sumit;
 		var txtit;
 		var total = 0;
 
-
-		//Validierung
-		validateEntrys(countEntrys);
-		//end Validierung
-		//agepoints
 		if(hisage>40){
 			agepoints = 5;
 		}else if(hisage>30){
@@ -61,7 +71,7 @@ $(document).ready(function(){
 		}else {
 			agepoints = 25;
 		}
-		//agepoints
+		
 		sum.push(hisheight/9, agepoints, value);
 		
 		$('.active').each(function(){
@@ -75,6 +85,7 @@ $(document).ready(function(){
 
 		$('.hidethis').addClass('hidden');
 		$('.showthis').removeClass('hidden');
+		$('.showthis').find('.rthidden').addClass('hidden');
 
 		var zws = [];
 		for(var i=0;i<sum.length;i++){
@@ -85,67 +96,28 @@ $(document).ready(function(){
 			total += zws[i]<< 0;
 		}
 		
-			
-		
-			nextCamel(t, total);
-			
-	})
+			var t=0;
+			function next() {
+					setTimeout(function() {
+			            if (t == total + 1) {
+			                return;
+			            }
 
+			            // Do what you need to do 
+			            $('.camelcount').text(t);
+			            t++;
+			            
+			            next();
+			        }, 50);
+
+			}	
+			next();
+	})
 })
-//end document ready
-
-/***********************
-******* Methoden *******
-***********************/
-
-//Count up camels//
-function nextCamel(t, total) {
-	setTimeout(function() {
-        if (t == total + 1) {
-            return;
-        }
-        $('.camelcount').text(t);
-        t++;
-        nextCamel(t, total);
-    }, 50);
-}
-//end Count up camels//
-//validate
-function validateEntrys(countEntrys){
-	countEntrys = 0;
-	$('.active').each(function(){
-		countEntrys++;
-	})
-	if(countEntrys<6){
-		$(".validate-popup").removeClass('validatehidden');
-	}
-}
-$(document).on("click", ".abort", function(){
-          $(".validate-popup").addClass('validatehidden');
-
-});
-//validate
 
 
-/****** end Methoden *******/
-
-//retry-button 
+//retry-button
 $(document).on("click", ".retry", function(){
           location.reload(true);
 });
 //end retry-button
-//language selection
-$('.speakenglish').on('click', function(){
-	$('.engl, .ger').toggleClass('langhidden');
-})
-//end language selection
-//dropdown to button
-$('div.btn-group ul.dropdown-menu li a').click(function (e) {
-    var $div = $(this).parent().parent().parent(); 
-    var $btn = $div.find('.haircolor');
-    $btn.html($(this).text());
-    $div.removeClass('open');
-    e.preventDefault();
-    return false;
-});
-//end dropdown to button
